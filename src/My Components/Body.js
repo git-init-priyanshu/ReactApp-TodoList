@@ -35,7 +35,7 @@ export default function Body(props) {
           </button>
         </div>
       </div>
-      {props.todoList.map((i) => {
+      {/* {props.todoList.map((i) => {
         return (
           <Todo
             key={i.id}
@@ -44,7 +44,7 @@ export default function Body(props) {
             setArray={props.funSettodoList()}
           />
         );
-      })}
+      })} */}
     </>
   );
 }

@@ -2,15 +2,20 @@ import React from "react";
 
 export default function Todo(props) {
   let funDone = () => {
-    console.log("funDone");
+    let temp = props.array.filter((i) => {
+      return i.value != props.task;
+    });
+    props.done(temp);
   };
   let funEdit = () => {
     console.log("funEdit");
   };
-  let funRemove = () => {
-    console.log("funRemove");
 
-    
+  let funRemove = () => {
+    let temp = props.array.filter((i) => {
+      return i.value != props.task;
+    });
+    props.remove(temp);
   };
 
   return (
@@ -37,3 +42,5 @@ export default function Todo(props) {
     </>
   );
 }
+// removecomponent={props.task}
+// onClick={props.remove(props.task)}
