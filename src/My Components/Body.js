@@ -1,20 +1,5 @@
 import React from "react";
-import Todo from "./Todo";
 export default function Body(props) {
-  // const [todoList, settodoList] = useState([]);
-  // const [text, settext] = useState("");
-
-  // let Changes = (event)=>{
-  //   settext(event.target.value)
-  // }
-
-  // let funAddTask = ()=>{
-  //     settodoList([ ...todoList, {
-  //       id: todoList.length,
-  //       value: text
-  //     }])
-  //     console.log(todoList)
-  // }
   return (
     <>
       <div className="container my-4">
@@ -35,16 +20,6 @@ export default function Body(props) {
           </button>
         </div>
       </div>
-      {/* {props.todoList.map((i) => {
-        return (
-          <Todo
-            key={i.id}
-            task={i.value}
-            array={props.todoList}
-            setArray={props.funSettodoList()}
-          />
-        );
-      })} */}
     </>
   );
 }

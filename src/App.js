@@ -2,8 +2,7 @@ import "./App.css";
 import Navbar from "./My Components/Navbar";
 import Body from "./My Components/Body";
 import Todo from "./My Components/Todo";
-
-// import FinishedTasks from "./My Components/FinishedTasks";
+import FinishedTasks from "./My Components/FinishedTasks";
 import React, { useState } from "react";
 
 function App() {
@@ -19,21 +18,26 @@ function App() {
 
   let funSettodoList = () => {
     settodoList([
-      ...todoList,
+      ...todoList,//"..." is a spread operator. This allows us to add todoList array elements and a new element
       {
         id: todoList.length,
         value: text,
       },
     ]);
+    settext("");
   };
 
-  let funDoneTasks = (x) => {
-    settodoList(x);
-    setcompleatedTasks(x);
+  let funDoneTasks = (temp) => {
+    setTimeout(() => {
+      settodoList(temp);
+      setcompleatedTasks(temp);
+    }, 300);
   };
 
-  let funRemoveComponent = (x) => {
-    settodoList(x);
+  let funRemoveComponent = (temp) => {
+    setTimeout(() => {
+      settodoList(temp);
+    }, 300);
   };
 
   return (
@@ -53,6 +57,11 @@ function App() {
           );
         })}
       </div>
+      {compleatedTasks.length >0?
+        <div className="border py-4">
+          <FinishedTasks />
+        </div>
+      :''}
     </div>
   );
 }
